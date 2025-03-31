@@ -6,7 +6,7 @@ function sleep(ms) {
   }
   
 
-function haversineDistance(coord1, coord2) {
+function calDistance(coord1, coord2) {
     const toRad = value => (value * Math.PI) / 180;
     const lat1 = coord1.lat;
     const lon1 = coord1.lon;
@@ -25,7 +25,7 @@ function haversineDistance(coord1, coord2) {
   
  
   function isWithinSafeZone(coordinate, safeZoneCenter, safeZoneRadius) {
-    const distance = haversineDistance(coordinate, safeZoneCenter);
+    const distance = calDistance(coordinate, safeZoneCenter);
     console.log(`Distance from safe zone center: ${distance.toFixed(2)} meters`);
     return distance < safeZoneRadius;
   }
@@ -50,5 +50,5 @@ function haversineDistance(coord1, coord2) {
     return null;
   }
   
-  module.exports = { sleep, haversineDistance, isWithinSafeZone, extractCoordinate };
+  module.exports = { sleep, calDistance, isWithinSafeZone, extractCoordinate };
   
